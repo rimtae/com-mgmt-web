@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import ListBoardComponent from './components/ListBoardComponent';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
+import CreateBoardComponent from './components/CreateBoardComponent';
+import ReadBoardComponent from './components/ReadBoardComponent';
+import JoinMemberComponent from './components/member/JoinMemberComponent';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> 
+      <Router>
+        <HeaderComponent/>
+          <div className="container">
+            <Switch>
+              <Route path = "/" exact component = {ListBoardComponent}></Route>
+              <Route path = "/board" component = {ListBoardComponent}></Route>
+              <Route path = "/create-board" component = {CreateBoardComponent}></Route>
+              <Route path = "/read-board/:comId" component = {ReadBoardComponent}></Route>
+              <Route path = "/member-join" component = {JoinMemberComponent}></Route>
+            </Switch>
+          </div>
+
+          
+        <FooterComponent/>
+      </Router>
     </div>
   );
 }
