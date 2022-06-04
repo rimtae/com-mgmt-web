@@ -4,7 +4,7 @@ import BoardService from '../service/BoardService';
 class CreateBoardComponent extends Component {
     constructor(props) {
         super(props);
-
+//dkssdfasdfs
         this.state = {
             comId:'',
             comNm:'',
