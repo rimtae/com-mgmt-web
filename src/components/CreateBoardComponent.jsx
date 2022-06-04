@@ -11,7 +11,7 @@ class CreateBoardComponent extends Component {
             comDesc:'',
             eduTypeCd:'',
             addr:'',
-            //stuNum:'',
+            stuNum:'',
             telNum:'',
 
         }
